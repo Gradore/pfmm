@@ -1,0 +1,53 @@
+name: Website veröffentlichen (GitHub Pages)
+
+on:
+  push:
+    branches: [claude/pfmm-redesign-mobile-first-rlwyij]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+  schedule:
+    # Täglich neu bauen, damit vorgerenderte Termine aktuell bleiben
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    env:
+      VITE_SUPABASE_URL: https://oawbsphowxobedyrnrlq.supabase.co
+      # Öffentlicher anon-Key (steht ohnehin im ausgelieferten JavaScript)
+      VITE_SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9hd2JzcGhvd3hvYmVkeXJucmxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA1OTI4MzksImV4cCI6MjEwNjE2ODgzOX0.hX-q5L1PX8dizeiFJV70K8uwUaMQ-9xj7180S32Aknc
+      VITE_SITE_URL: https://pfmm.gradore.de
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
