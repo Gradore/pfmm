@@ -19,7 +19,7 @@ Konzept und die eingesetzten Build-Anweisungen fest.
 
 > Führungstraining, das beim Denken anfängt.
 
-25 Jahre Vertriebs- und Marketingpraxis, langjähriges philosophisches Studium und
+30 Jahre Vertriebs- und Marketingpraxis, langjähriges philosophisches Studium und
 eine Ausbildung in Individualpsychologie — das ist das Unterscheidungsmerkmal
 gegenüber austauschbaren Trainingsanbietern im Raum Frankfurt.
 
