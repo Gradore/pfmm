@@ -1,0 +1,4 @@
+# Vorschau-Adresse der neuen Website. Die öffentliche Adresse bleibt vorerst www.pfmm.de,
+# deshalb soll diese Vorschau nicht in Suchmaschinen erscheinen.
+User-agent: *
+Disallow: /

@@ -1,0 +1,4 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHeader } from "@/components/site/PageHeader";
+export const Route = createFileRoute("/leistungen/seminare/kraft-der-wertschaetzung")({ component: Page, head: () => ({ meta: [{ title: "Kraft der Wertschätzung | Praxis für Management – Training" }, { name: "description", content: "Kraft der Wertschätzung: angekündigter Termin 24.–25. November 2026." }], links: [{ rel: "canonical", href: "/leistungen/seminare/kraft-der-wertschaetzung" }] }) });
+function Page() { return <><PageHeader crumbs={[{ label: "Offene Seminare", to: "/leistungen/seminare" }, { label: "Kraft der Wertschätzung" }]} eyebrow="Aktuelles" title="Kraft der Wertschätzung" lead="24.–25. November 2026 · 2 Tage" /><div className="container-page section-y"><p>Weitere Informationen zu diesem Seminar folgen.</p><Link to="/kontakt" className="mt-5 inline-flex text-brass-700 underline">Kontakt aufnehmen</Link></div></>; }

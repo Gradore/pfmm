@@ -1,0 +1,4 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHeader } from "@/components/site/PageHeader";
+export const Route = createFileRoute("/leistungen/seminare/zeit-effektivitaet")({ component: Page, head: () => ({ meta: [{ title: "Zeit und Effizienztraining | Praxis für Management – Training" }, { name: "description", content: "Zeit und Effizienztraining: angekündigter Termin 12.–13. November 2026." }], links: [{ rel: "canonical", href: "/leistungen/seminare/zeit-effektivitaet" }] }) });
+function Page() { return <><PageHeader crumbs={[{ label: "Offene Seminare", to: "/leistungen/seminare" }, { label: "Zeit und Effizienztraining" }]} eyebrow="Aktuelles" title="Zeit und Effizienztraining" lead="12.–13. November 2026 · 2 Tage" /><div className="container-page section-y"><p>Weitere Informationen zu diesem Seminar folgen.</p><Link to="/kontakt" className="mt-5 inline-flex text-brass-700 underline">Kontakt aufnehmen</Link></div></>; }

@@ -1,0 +1,4 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHeader } from "@/components/site/PageHeader";
+export const Route = createFileRoute("/leistungen/seminare/fuehren-mit-zielen")({ component: Page, head: () => ({ meta: [{ title: "Führen mit Zielen | Praxis für Management – Training" }, { name: "description", content: "Führen mit Zielen: angekündigter Termin 18.–19. November 2026." }], links: [{ rel: "canonical", href: "/leistungen/seminare/fuehren-mit-zielen" }] }) });
+function Page() { return <><PageHeader crumbs={[{ label: "Offene Seminare", to: "/leistungen/seminare" }, { label: "Führen mit Zielen" }]} eyebrow="Aktuelles" title="Führen mit Zielen" lead="18.–19. November 2026 · 2 Tage" /><div className="container-page section-y"><p>Weitere Informationen zu diesem Seminar folgen.</p><Link to="/kontakt" className="mt-5 inline-flex text-brass-700 underline">Kontakt aufnehmen</Link></div></>; }

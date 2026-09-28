@@ -1,0 +1,4 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHeader } from "@/components/site/PageHeader";
+export const Route = createFileRoute("/leistungen/seminare/moderation-workshops")({ component: Page, head: () => ({ meta: [{ title: "Moderation von Workshops | Praxis für Management – Training" }, { name: "description", content: "Moderation von Workshops: angekündigter Termin 3.–4. November 2026." }], links: [{ rel: "canonical", href: "/leistungen/seminare/moderation-workshops" }] }) });
+function Page() { return <><PageHeader crumbs={[{ label: "Offene Seminare", to: "/leistungen/seminare" }, { label: "Moderation von Workshops" }]} eyebrow="Aktuelles" title="Moderation von Workshops" lead="3.–4. November 2026 · 2 Tage" /><div className="container-page section-y"><p>Weitere Informationen zu diesem Seminar folgen.</p><Link to="/kontakt" className="mt-5 inline-flex text-brass-700 underline">Kontakt aufnehmen</Link></div></>; }
