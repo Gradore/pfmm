@@ -1,13 +1,8 @@
 name: Website veröffentlichen (GitHub Pages)
 
+# Nur manuell: Live-Betrieb läuft derzeit über Lovable (ppfm.gradore.de).
 on:
-  push:
-    branches: [claude/pfmm-redesign-mobile-first-rlwyij]
-    paths: ["site/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
-  schedule:
-    # Täglich neu bauen, damit vorgerenderte Termine aktuell bleiben
-    - cron: "17 3 * * *"
 
 permissions:
   contents: read
